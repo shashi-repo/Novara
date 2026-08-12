@@ -7,6 +7,7 @@ const pool = require("./config/database");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const projectRoutes = require("./routes/projectRoutes");
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/projects", projectRoutes);
 
 
 app.get("/", (req, res) => {
